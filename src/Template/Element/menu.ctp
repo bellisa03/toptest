@@ -1,8 +1,9 @@
 <div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
 					<li class= <?= (!empty($activeItem) && ($activeItem =='Home') )?'active' :'inactive' ?>>
-						<?= $this->Html->link('Home', '/Home/index') ?></li>
-					<li><a href="#">About</a></li>
+						<?= $this->Html->link('Home', ['controller' => 'Home','action' =>'index']) ?></li>
+					<li class= <?= (!empty($activeItem) && ($activeItem =='About') )?'active' :'inactive' ?>>
+						<?= $this->Html->link('About', ['controller' => 'About','action' =>'index']) ?></li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
 						<ul class="dropdown-menu">
