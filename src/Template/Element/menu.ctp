@@ -4,6 +4,8 @@
 						<?= $this->Html->link('Home', ['controller' => 'Home','action' =>'index']) ?></li>
 					<li class= <?= (!empty($activeItem) && ($activeItem =='About') )?'active' :'inactive' ?>>
 						<?= $this->Html->link('About', ['controller' => 'About','action' =>'index']) ?></li>
+						<li class= <?= (!empty($activeItem) && ($activeItem =='Music') )?'active' :'inactive' ?>>
+						<?= $this->Html->link('Music', ['controller' => 'Music','action' =>'index']) ?></li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
 						<ul class="dropdown-menu">
