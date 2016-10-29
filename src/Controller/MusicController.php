@@ -5,6 +5,7 @@ namespace App\Controller;
 use Cake\Controller\Controller;
 use Cake\Event\Event;
 use App\Model\Entity\Music;
+use App\Model\Entity\MusicGenre;
 
 class MusicController extends AppController
 {
@@ -31,8 +32,22 @@ class MusicController extends AppController
 		
 	}
 	
+	public function getGenre($id){
+		$soapClient = new \SoapClient('http://www.it4today.com/chinook/ChinookService.svc?wsdl');
+		
+		$resultWebService = $soapClient->GetMusicGenreTracks(["genreID" => $id]);
+		
+		$tracksResult[] = $resultWebService->GetMusicGenreTracksResult;
+		
+		
+		
+		
+		
+		
+	}
+	
 	public function beforeFilter(Event $event){
 		
-		$this->Auth->allow(['index']);
+		$this->Auth->allow(['index', 'getGenre']);
 	}
 }
