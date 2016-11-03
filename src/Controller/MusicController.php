@@ -32,19 +32,19 @@ class MusicController extends AppController
 		
 	}
 	
-	public function getGenre($id){
-		$soapClient = new \SoapClient('http://www.it4today.com/chinook/ChinookService.svc?wsdl');
+// 	public function getGenre($id){
+// 		$soapClient = new \SoapClient('http://www.it4today.com/chinook/ChinookService.svc?wsdl');
 		
-		$resultWebService = $soapClient->GetMusicGenreTracks(["genreID" => $id]);
+// 		$resultWebService = $soapClient->GetMusicGenreTracks(["genreID" => $id]);
 		
-		$tracksResult[] = $resultWebService->GetMusicGenreTracksResult;
-		
-		
+// 		$tracksResult[] = $resultWebService->GetMusicGenreTracksResult;
 		
 		
 		
 		
-	}
+		
+		
+// 	}
 	
 	public function beforeFilter(Event $event){
 		

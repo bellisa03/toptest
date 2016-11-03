@@ -5,26 +5,23 @@ use App\Model\Entity\User;
 
 class UsersController extends AppController
 {
+	
 	public function initialize(){
 		parent::initialize();
 		$this->Auth->allow(['logout']);
-
-		$user = new User();
-		$user->username = 'usertest';
-		$user->password = 'test';
-		$user->role = 'user'; // to change with model and DB
-	
 	}
 	
 	
 	public function login() {
 		if ($this->request->is('post')){
 			//$user = $this->Auth->identify();
+			$userDB = new User();
+			$userDB->getUser();
 			
-			$this->request->session()->write("usercontext", $user);
-			$this->request->session()->check("usercontext");
-			
-			if ($user){
+			$user = new User();
+			$user = $this->request; 
+			if($user == $userDB){
+				$this->request->session()->write("usercontext", $user);
 				$this->Auth->setUser($user);
 				return $this->redirect($this->Auth->redirectUrl());
 			}
