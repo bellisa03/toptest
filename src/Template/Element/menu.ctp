@@ -15,6 +15,11 @@
 					</li>
 					<li><a href="#">Contact</a></li>
 					<li class= <?= (!empty($activeItem) && ($activeItem =='SIGN IN / SIGN UP') )?'active' :'inactive' ?>>
-						<?= $this->Html->link('SIGN IN / SIGN UP', ['controller' => 'Users','action' =>'login'], ['class' => 'btn']) ?></li>
+					<?php if (isset($user) && $user != null) {?>
+						<?= $this->Html->link('Bonjour ' . $user->username. '- Se déconnecter', ['controller' => 'Users','action' =>'logout'], ['class' => 'btn']) ?>
+						<?php } else {?>
+						<?= $this->Html->link('SIGN IN / SIGN UP', ['controller' => 'Users','action' =>'login'], ['class' => 'btn']) ?>
+						<?php }?>
+						</li>
 				</ul>
 			</div><!--/.nav-collapse -->

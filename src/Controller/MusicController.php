@@ -48,6 +48,7 @@ class MusicController extends AppController
 	
 	public function beforeFilter(Event $event){
 		
-		$this->Auth->allow(['index', 'getGenre']);
+		$user = $this->Auth->user();
+		$this->set('user', $user);
 	}
 }

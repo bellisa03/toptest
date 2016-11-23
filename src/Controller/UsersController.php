@@ -2,9 +2,16 @@
 
 namespace App\Controller;
 use App\Model\Entity\User;
+use Cake\Event\Event;
 
 class UsersController extends AppController
 {
+
+	public function beforeFilter(Event $event){
+	
+		$user = $this->Auth->user();
+		$this->set('user', $user);
+	}
 	
 	public function initialize(){
 		parent::initialize();
@@ -15,13 +22,14 @@ class UsersController extends AppController
 	public function login() {
 		if ($this->request->is('post')){
 			//$user = $this->Auth->identify();
-			$userDB = new User();
-			$userDB->getUser();
+			$username = $this->request->data['username']; 
+			$pwd = $this->request->data['password'];
 			
-			$user = new User();
-			$user = $this->request; 
-			if($user == $userDB){
-				$this->request->session()->write("usercontext", $user);
+			if($username == 'usertest' && $pwd == 'pwd'){
+				$user = new User();
+				$user->username = $username;
+				$user->password = $pwd;
+				$user->role = 'user';
 				$this->Auth->setUser($user);
 				return $this->redirect($this->Auth->redirectUrl());
 			}
