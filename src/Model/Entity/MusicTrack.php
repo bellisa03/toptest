@@ -3,7 +3,7 @@ namespace App\Model\Entity;
 
 use Cake\ORM\Entity;
 
-class Music extends Entity
+class MusicTrack extends Entity
 {
 	public $albumTitle;
 	public $artistName;

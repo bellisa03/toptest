@@ -6,6 +6,7 @@ use Cake\Controller\Controller;
 use Cake\Event\Event;
 use App\Model\Entity\Music;
 use App\Model\Entity\MusicGenre;
+use App\Model\Entity\MusicTrack;
 
 class MusicController extends AppController
 {
@@ -15,7 +16,7 @@ class MusicController extends AppController
 		$resultWebService = $soapClient->GetMusicTrack(["trackID" => $id]);
 		
 		$trackResult = $resultWebService->GetMusicTrackResult;
-		$track = new Music();
+		$track = new MusicTrack();
 			
 		if ($trackResult != null){
 			

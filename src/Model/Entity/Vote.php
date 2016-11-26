@@ -4,19 +4,13 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * User Entity
+ * Vote Entity
  *
  * @property int $id
- * @property string $login
- * @property string $password
- * @property string $email
- * @property string $lastname
- * @property int $role
- * @property \Cake\I18n\Time $created
- * @property \Cake\I18n\Time $modified
- * @property string $firstname
+ * @property int $id_users
+ * @property int $id_polls
  */
-class User extends Entity
+class Vote extends Entity
 {
 
     /**
@@ -31,14 +25,5 @@ class User extends Entity
     protected $_accessible = [
         '*' => true,
         'id' => false
-    ];
-
-    /**
-     * Fields that are excluded from JSON versions of the entity.
-     *
-     * @var array
-     */
-    protected $_hidden = [
-        'password'
     ];
 }
