@@ -11,9 +11,9 @@ class PollsController extends AppController
 	public function index() {
 
 		//$polls = $this->Polls->find('all');
-		$pollManager = new PollManager();
+		//$pollManager = (new PollManager())->getPolls();
 		
-		$polls = $pollManager->getPolls();
+		$polls = PollManager::getPolls();
 		
 		$this->set(compact('polls'));
 		$this->set('_serialize', ['polls']);

@@ -6,7 +6,7 @@ use Cake\ORM\TableRegistry;
 class PollManager
 {
     
-    public function getPolls(){
+    public static function getPolls(){
     	
     	$polls = TableRegistry::get('Polls')->find();
     	

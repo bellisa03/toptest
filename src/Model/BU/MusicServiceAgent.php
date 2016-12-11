@@ -8,6 +8,7 @@ use App\Model\Entity\MusicGenre;
 class MusicServiceAgent
 {	
 	private $address = 'http://www.it4today.com/chinook/ChinookService.svc?wsdl';
+	//adresse peut-être dans une constante
 	private $soapClient;
 	
 	public function __construct(){

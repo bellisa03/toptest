@@ -25,6 +25,7 @@
 	<?= $this->Html->script('html5shiv.js')?>
 	<?= $this->Html->script('respond.min.js')?>
 	<![endif]-->
+	
 </head>
 
 <body class="home">
@@ -41,7 +42,7 @@
 		</div>
 	</div> 
 	<!-- /.navbar -->
-
+	<?= $this->Flash->render() ?>
 	<?= $this->fetch('content') ?>
 	
 	<!-- Social links. @TODO: replace by link/instructions in template -->
